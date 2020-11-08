@@ -4,7 +4,8 @@ let Knex = require('knex');
 let dbConfig = require('./knexfile');
 
 if (process.env.NODE_ENV === undefined) {
-  process.env.NODE_ENV = 'development';
+  console.error('NODE_ENV environment variabled undefined');
+  process.exit(1);
 }
 
 module.exports = Knex(dbConfig[process.env.NODE_ENV]);

@@ -3,18 +3,33 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let dotenv = require('dotenv');
 
+dotenv.config();
 let app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.root = (...args) => path.join(__dirname, ...args);
+
+// Helper functions to check whether we're in the production
+// or development environment.
+app.inProduction = () => app.get('env') === 'production';
+app.inDevelopment = () => app.get('env') === 'development';
+
+// Tell Express to look in views/ to find our view templates
+// and to use the Handlebars (hbs) to render them.
+app.set('views', app.root('views'));
 app.set('view engine', 'hbs');
 
-app.use(logger('dev'));
+if (app.inDevelopment()) {
+  app.use(logger('dev'));
+} else {
+  app.use(logger('combined'));
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(app.root('public')));
 
 let routes = require('./routes');
 app.use('/', routes);
