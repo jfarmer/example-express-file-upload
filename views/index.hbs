@@ -3,3 +3,11 @@
   <input type="file" name="photo">
   <button type="submit">Upload</button>
 </form>
+
+{{#if photos}}
+  <ul>
+    {{#each photos}}
+      <li><img src="{{location}}"</li>
+    {{/each}}
+  </ul>
+{{/if}}

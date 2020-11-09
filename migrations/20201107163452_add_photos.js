@@ -3,8 +3,11 @@ exports.up = function(knex) {
     table.increments('id').primary();
     table.text('key').notNullable();
     table.text('filename').notNullable();
+    table.text('location').notNullable();
     table.text('content_type');
     table.timestamp('created_at').defaultTo(knex.fn.now());
+
+    table.unique('key');
   });
 };
 

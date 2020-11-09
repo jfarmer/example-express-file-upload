@@ -5,6 +5,8 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let dotenv = require('dotenv');
 
+// dotenv allows us to set environment variables in development
+// by editing the .env file. In production, we'd use "herok config".
 dotenv.config();
 let app = express();
 

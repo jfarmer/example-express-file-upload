@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "lint": "npx eslint .",
-    "start": "DEBUG=\"express-app:*,knex:query\" node ./bin/www"
+    "start": "cross-env DEBUG=\"express-app:*,knex:query\" node ./bin/www"
   },
   "dependencies": {
     "aws-sdk": "^2.787.0",
@@ -22,6 +22,7 @@
     "pg": "^8.4.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "eslint": "^7.13.0",
     "eslint-config-standard": "^16.0.1",
     "eslint-plugin-import": "^2.22.1",
