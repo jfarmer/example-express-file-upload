@@ -52,6 +52,25 @@ If something fails, it likely means one of the following things is misconfigured
 1. Your S3 bucket on AWS
 1. Your AWS credentials contained in `.env`
 
+#### Debugging <!-- omit in toc -->
+
+We included some useful debugging commands.
+
+1. **Print Requires Environment Variables**
+
+   ```console
+   npm run debug:env-vars
+   ```
+
+   This command will print out the values of the required environment variables (`NODE_ENV`, `S3_BUCKET_NAME`, etc.).
+1. **Print S3 Bucket Names**
+
+   ```console
+   npm run debug:s3-buckets
+   ```
+
+   This command will print out all S3 buckets associated with the configured AWS API key and secret.
+
 ## Configuring Amazon S3
 
 Follow the instructions in the **Overview** and **S3 setup** sections of [Heroku's AWS S3 Guide][url-heroku-s3]. This example implements the *Pass-Through Upload* approach described in the **File Upload** section.
