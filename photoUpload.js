@@ -3,9 +3,14 @@ let AWS = require('aws-sdk');
 let multer = require('multer');
 let multerS3 = require('multer-s3');
 
-// Generate a random name for the file on S3
-// that doesn't depend on the original filename,
-// but preserves the file extension
+/**
+ * Given a file name, generate a random (unique) object name
+ * for use on Amazon's S3. It preserves the file extension.
+ *
+ * @param {string} fileName - The original filename
+ * @returns {string} - A randomly generated object key with the
+ *   same file extension as the input filename
+ */
 function generateObjectKey(fileName) {
   let uniq = crypto.randomBytes(4).toString('hex');
   let extension = fileName.match(/[^.]+$/)[0];
@@ -22,7 +27,7 @@ let s3 = new AWS.S3();
 let photoUpload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: process.env.AWS_S3_BUCKET_NAME,
+    bucket: process.env.S3_BUCKET_NAME,
     acl: 'public-read',
     contentType: multerS3.AUTO_CONTENT_TYPE,
     key: (request, file, next) => {
