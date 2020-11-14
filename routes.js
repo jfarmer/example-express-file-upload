@@ -13,7 +13,7 @@ router.get('/', async(request, response) => {
 router.post('/upload', photoUpload.single('photo'), async(request, response) => {
   // There's no error-handling here. If upload failed
   // for any reason, this is where we'd handle it.
-  // For the sake of the example, assme everything worked.
+  // For the sake of the example, assume everything worked.
   let photo = request.file;
 
   await db('photos').insert({
