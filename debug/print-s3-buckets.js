@@ -10,9 +10,9 @@ async function main() {
 
   let s3 = new AWS.S3();
 
-  console.log('+-----------------------+')
+  console.log('+-----------------------+');
   console.log('| S3 Bucket Information |');
-  console.log('+-----------------------+')
+  console.log('+-----------------------+');
   console.log();
   console.log(`AWS_ACCESS_KEY_ID:     "${awsAccessKeyId}"`);
   console.log(`AWS_SECRET_ACCESS_KEY: "${awsSecretAccessKey}"`);
