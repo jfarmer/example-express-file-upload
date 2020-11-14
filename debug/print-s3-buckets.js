@@ -6,6 +6,8 @@ let AWS = require('aws-sdk');
 async function main() {
   let awsAccessKeyId = process.env.AWS_ACCESS_KEY_ID;
   let awsSecretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+  let s3BucketName = process.env.S3_BUCKET_NAME;
+
   let s3 = new AWS.S3();
 
   console.log('+-----------------------+')
@@ -14,6 +16,7 @@ async function main() {
   console.log();
   console.log(`AWS_ACCESS_KEY_ID:     "${awsAccessKeyId}"`);
   console.log(`AWS_SECRET_ACCESS_KEY: "${awsSecretAccessKey}"`);
+  console.log(`S3_BUCKET_NAME:        "${s3BucketName}"`);
   console.log();
 
   try {
