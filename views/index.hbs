@@ -5,9 +5,11 @@
 </form>
 
 {{#if photos}}
-  <ul>
+  <div class="gallery">
     {{#each photos}}
-      <li><img src="{{location}}"</li>
+      <div class="photo">
+        <img src="{{location}}">
+      </div>
     {{/each}}
-  </ul>
+  </div>
 {{/if}}
