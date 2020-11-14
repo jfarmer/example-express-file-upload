@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "debug:vars": "node scripts/print-env-vars.js",
     "dev": "nodemon",
     "db:create": "createdb express_file_upload_dev",
     "db:drop": "dropdb express_file_upload_dev",
