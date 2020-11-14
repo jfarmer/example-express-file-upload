@@ -1,9 +1,15 @@
 {
-  "name": "template-express",
+  "name": "example-express-file-upload",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lint": "npx eslint .",
+    "dev": "nodemon",
+    "db:create": "createdb express_file_upload_dev",
+    "db:drop": "dropdb express_file_upload_dev",
+    "db:migrate": "knex migrate:latest",
+    "db:psql": "psql express_file_upload_dev",
+    "db:setup": "npm run db:create && npm run db:migrate",
+    "lint": "eslint .",
     "start": "cross-env DEBUG=\"express-app:*,knex:query\" node ./bin/www"
   },
   "dependencies": {
@@ -28,8 +34,19 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.2"
+    "eslint-plugin-standard": "^4.0.2",
+    "nodemon": "^2.0.6"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfarmer/example-express-file-upload.git"
+  },
+  "author": "Jesse Farmer <jesse@20bits.com>",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/jfarmer/example-express-file-upload/issues"
+  },
+  "homepage": "https://github.com/jfarmer/example-express-file-upload#readme",
   "engines": {
     "node": "15.x"
   }
