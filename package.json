@@ -1,7 +1,7 @@
 {
   "name": "example-express-file-upload",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "debug:env-vars": "node debug/print-env-vars.js",
     "debug:s3-buckets": "node debug/print-s3-buckets.js",
