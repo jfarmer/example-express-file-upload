@@ -128,9 +128,9 @@ One person on a team should create the "main" application under their account an
 
 1. To **create** a new application, run the following command (replacing `some-example-app` with a *unique* name for your application):
 
-  ```console
-  heroku create some-example-app
-  ```
+   ```console
+   heroku create some-example-app
+   ```
 
 1. Add PostgreSQL to your Heroku instance with the following command:
 
@@ -140,9 +140,9 @@ One person on a team should create the "main" application under their account an
 
 1. Add collaborators with the following command:
 
-  ```console
-  heroku access:add changethisemail@example.com
-  ```
+   ```console
+   heroku access:add changethisemail@example.com
+   ```
 
   You can also add collaborators via the web interface.
 
@@ -227,3 +227,11 @@ heroku pg --help
 [github-knex]: https://github.com/knex/knex
 [github-multer]: https://github.com/expressjs/multer#readme
 [heroku-collaborating]: https://devcenter.heroku.com/articles/collaborating
+[url-expressjs]: https://expressjs.com/
+[url-handlebarsjs]: https://handlebarsjs.com/
+[url-chocolatey]: https://chocolatey.org
+[url-chocolatey-postgresql]: https://chocolatey.org/packages/postgresql
+[url-knexjs]: http://knexjs.org/
+[url-objectionjs]: https://vincit.github.io/objection.js/
+[url-heroku]: https://heroku.com
+[url-heroku-install-cli]: https://devcenter.heroku.com/articles/heroku-cli#download-and-install
