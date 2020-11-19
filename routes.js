@@ -1,6 +1,6 @@
 let Router = require('express-promise-router');
-let db = require('./database');
-let photoUpload = require('./photoUpload');
+let db = require('./lib/database');
+let photoUpload = require('./lib/photoUpload');
 
 let router = new Router();
 
